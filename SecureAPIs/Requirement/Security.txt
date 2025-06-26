@@ -1,0 +1,43 @@
+﻿✅ 1. Authentication and Authorization
+Purpose: Ensure only legitimate users access your API.
+
+Technologies:
+
+OAuth 2.0 / OpenID Connect
+JWT (JSON Web Token)
+API Key (for internal or simple APIs)
+-----------------------------------------------------------
+✅ 2. HTTPS (SSL/TLS)
+Purpose: Encrypt data in transit between client and server.
+
+Why: Prevents man-in-the-middle (MITM) attacks.
+How: Always use https:// instead of http://.
+-----------------------------------------------------------
+✅ 3. Rate Limiting and Throttling
+Purpose: Protect API from abuse (DDoS, brute-force, misuse).
+
+Tools:
+
+In .NET: Rate Limiting Middleware
+Use API Gateways like Azure API Management, Kong, or NGINX
+-----------------------------------------------------------
+✅ 4. Input Validation & Sanitization
+Purpose: Prevent SQL Injection, XSS, and other attacks.
+
+How:
+
+Validate data type, length, format
+Use ORM (e.g., Entity Framework) to avoid raw SQL
+Never trust user input — always sanitize
+-----------------------------------------------------------
+✅ 5. Use Secure Headers & CORS Policies
+Purpose: Prevent cross-origin attacks and browser exploits.
+
+Examples:
+
+CORS: Allow only trusted origins
+Security Headers:
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy
+
