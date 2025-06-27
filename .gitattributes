@@ -1,73 +1,40 @@
-####################################
-# ASP.NET Core / C# Build Artifacts
-####################################
-bin/
-obj/
-*.dll
-*.exe
-*.pdb
+# =========================================
+# Normalize line endings for all text files
+# =========================================
+* text=auto
 
-####################################
-# Visual Studio / IDE Files
-####################################
-.vs/
-*.user
-*.suo
-*.csproj.user
-*.sln.docstates
+# Force consistent line endings (optional, for Windows)
+*.cs     text eol=crlf
+*.cshtml text eol=crlf
+*.html   text eol=crlf
+*.js     text eol=crlf
+*.ts     text eol=crlf
+*.json   text eol=crlf
+*.css    text eol=crlf
+*.scss   text eol=crlf
+*.md     text eol=crlf
+*.yml    text eol=crlf
 
-# JetBrains Rider
-.idea/
+# =============================
+# Treat binary files properly
+# =============================
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.exe binary
+*.dll binary
+*.pdf binary
 
-# VS Code
-.vscode/
+# =======================================
+# Mark C# files for better diffing (VS / GitHub UI)
+# =======================================
+*.cs diff=csharp
 
-####################################
-# Logs and Temp Files
-####################################
-*.log
-*.tmp
-*.temp
-
-####################################
-# Entity Framework & Database Files
-####################################
-*.mdf
-*.ldf
-*.db
-
-####################################
-# App Settings (Secrets)
-####################################
-appsettings.Development.json
-secrets.json
-
-####################################
-# Node / React / Angular (optional frontend)
-####################################
-node_modules/
-dist/
-build/
-.env
-npm-debug.log
-yarn-debug.log
-yarn-error.log
-
-####################################
-# OS-specific files
-####################################
-.DS_Store
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-####################################
-# Git merge conflict backup files
-####################################
-*.orig
-
-####################################
-# Publish output
-####################################
-*.Publish.xml
-publish/
+# =============================
+# Optional: Lock files (for LFS or shared repos)
+# =============================
+# *.psd lockable
+# *.mp4 lockable
