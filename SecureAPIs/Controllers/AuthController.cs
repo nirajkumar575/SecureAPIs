@@ -15,10 +15,9 @@ namespace SecureAPIs.Controllers
     [EnableRateLimiting("fixed")]
     public class AuthController : ControllerBase
     {
-        private readonly JwtTokenService _jwtService;
+        private readonly IJwtTokenService _jwtService;
         private readonly ApplicationDbContext _context;
-        private static readonly ConcurrentDictionary<string, (string Password, string Role)> _users = new();
-        public AuthController(JwtTokenService jwtService,ApplicationDbContext context)
+        public AuthController(IJwtTokenService jwtService,ApplicationDbContext context)
         {
             _jwtService = jwtService;
             _context = context;

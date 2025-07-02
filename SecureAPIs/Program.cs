@@ -16,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
-builder.Services.AddSingleton<JwtTokenService>();
+builder.Services.AddSingleton<IJwtTokenService,JwtTokenService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -51,7 +51,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowTrustedOrigins", policy =>
     {
-        policy.WithOrigins("https://your-frontend-app.com")
+        policy.WithOrigins("http://localhost:3000/", "http://localhost:3001/")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
